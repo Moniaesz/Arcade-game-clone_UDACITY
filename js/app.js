@@ -1,7 +1,9 @@
 // Enemies our player must avoid
-var Enemy = function() {
+let Enemy = function(x, y) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
+    this.x = x;
+    this.y = y;
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -52,6 +54,7 @@ Player.prototype.handleInput = function(keyPress) {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
+let allEnemies = [new Enemy(100, 60), new Enemy(100,230), new Enemy(0, 140)];
 
 // Place the player object in a variable called player
 let player = new Player(200, 400);
