@@ -37,16 +37,16 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(keyPress) {
-    if (keyPress == 'up') {
-    this.y -= 85;
+    if (keyPress === 'up' && this.y > -10) {
+    this.y -= 82;
     }
-    if (keyPress == 'down') {
-    this.y += 85;
+    if (keyPress === 'down' && this.y < 400) {
+    this.y += 82;
     }
-    if (keyPress == 'left') {
+    if (keyPress === 'left' && this.x > 0) {
     this.x -= 100;
     }
-    if (keyPress == 'right') {
+    if (keyPress === 'right' && this.x < 400) {
     this.x += 100;
     }
 }
@@ -57,7 +57,7 @@ Player.prototype.handleInput = function(keyPress) {
 let allEnemies = [new Enemy(100, 60), new Enemy(100,230), new Enemy(0, 140)];
 
 // Place the player object in a variable called player
-let player = new Player(200, 400);
+let player = new Player(0, -10);
 
 
 // This listens for key presses and sends the keys to your
