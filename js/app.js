@@ -4,7 +4,7 @@ let Enemy = function(x, y, speed) {
     // we've provided one for you to get started
     this.x = x;
     this.y = y;
-    this.speed = Math.floor((Math.random()*100)+50);
+    this.speed = Math.floor((Math.random()*100)+200);
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -21,7 +21,7 @@ Enemy.prototype.update = function(dt) {
 // set new random speed for enemy once is off canvas
     if (this.x > 505) {
         this.x = -75;
-        this.speed =  Math.floor((Math.random()*100)+50);
+        this.speed =  Math.floor((Math.random()*100)+200);
     }
 };
 
