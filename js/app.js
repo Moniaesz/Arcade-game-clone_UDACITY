@@ -23,7 +23,16 @@ Enemy.prototype.update = function(dt) {
         this.x = -75;
         this.speed =  Math.floor((Math.random()*100)+200);
     }
-};
+
+// check if player is colliding with any of bug-enemy
+    if (!(this.x + 70 < player.x ||
+        player.x + 35 < this.x ||
+        this.y + 45 < player.y ||
+        player.y + 70 < this.y)) {
+        player.x = 200;
+        player.y = 400;
+    }
+}
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
@@ -38,12 +47,12 @@ let Player = function(x, y) {
     this.sprite = 'images/char-horn-girl.png';
 };
 
-Player.prototype.update = function(dt) {
-
-}
 
 // This class requires an update(), render() and
 // a handleInput() method.
+Player.prototype.update = function(dt) {
+}
+
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -64,12 +73,14 @@ Player.prototype.handleInput = function(keyPress) {
     this.x += 100;
     }
     if (this.y < 0) {
-        setTimeout(function() {
+    setTimeout(function() {
+        alert('Great job, You won! :)')
         _this.x = 200;
         _this.y = 400;
         }, 250);
-    };
-}
+    }
+};
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
