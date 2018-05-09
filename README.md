@@ -1,6 +1,27 @@
-frontend-nanodegree-arcade-game
-===============================
+## CLASSIC ARCADE GAME CLONE
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+This game is a project made for Nanodegree Program by Udacity&Google in Front-end Path.
+Game is based on Object Oriented Programming concepts. 
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+### HOW TO START
+
+* click here: https://moniaesz.github.io/Arcade-game-clone_UDACITY/
+
+* clone the repository or download zip folder from https://github.com/Moniaesz/Arcade-game-clone_UDACITY
+
+Open index.html and play!
+
+### GAME RULES
+
+Game consist of board of tiles (grass, pavement and water), player (You) and bugs that represents enemies that player have to avoid in order to complete the game. 
+
+Player can move one tile at a time - up, down, left and right (using arrow keys), but cannot go off screen. Bugs are moving with random speed that changes for each enemy - every time new bug appears on the left side of the board.
+
+Your goal is to reach water tile without colliding with any of bug-enemies. Once your player collide with any enemy - game reset and player moves to starting position.
+
+Once water is reached - game is won and You will be notified with short alert.
+
+
+### GAME DEPENDENCIES:
+
+* Collision detection inspiration https://developer.mozilla.org/kab/docs/Games/Techniques/2D_collision_detection
