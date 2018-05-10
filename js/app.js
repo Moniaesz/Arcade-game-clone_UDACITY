@@ -77,7 +77,7 @@ Player.prototype.handleInput = function(keyPress) {
         alert('Great job, You won! :)')
         _this.x = 200;
         _this.y = 400;
-        }, 250);
+        }, 30);
     }
 };
 
