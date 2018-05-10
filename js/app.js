@@ -47,26 +47,10 @@ let Player = function(x, y) {
     this.sprite = 'images/char-horn-girl.png';
 };
 
-
 // This class requires an update(), render() and
 // a handleInput() method.
-Player.prototype.update = function(dt) {
-
-}
-
-// Draw the player on the screen using player's sprite, placed in engine.js
-Player.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-
-
-Player.prototype.handleInput = function(keyPress) {
-    let _this = this;
-
-// Once player reach any of water tile - reset it's position to starting point 
-// (200 on x-axis, 400 on y-axis)
-    if (this.y < 0) {
-            if (keyPress === 'up' && this.y > -10) {
+Player.prototype.update = function(keyPress) {
+    if (keyPress === 'up' && this.y > -10) {
         this.y -= 82;
     }
     if (keyPress === 'down' && this.y < 400) {
@@ -78,7 +62,20 @@ Player.prototype.handleInput = function(keyPress) {
     if (keyPress === 'right' && this.x < 400) {
         this.x += 100;
     }
+}
 
+// Draw the player on the screen using player's sprite, placed in engine.js
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+// implementing winning condition
+Player.prototype.handleInput = function() {
+    let _this = this;
+
+// Once player reach any of water tile - reset it's position to starting point 
+// (200 on x-axis, 400 on y-axis)
+    if (this.y < 0) {
         setTimeout(function() {
             alert('Great job, You won! :)');
             _this.x = 200;
@@ -86,7 +83,6 @@ Player.prototype.handleInput = function(keyPress) {
         }, 30);
     }
 };
-
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
