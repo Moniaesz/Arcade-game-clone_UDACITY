@@ -51,32 +51,38 @@ let Player = function(x, y) {
 // This class requires an update(), render() and
 // a handleInput() method.
 Player.prototype.update = function(dt) {
+
 }
 
+// Draw the player on the screen using player's sprite, placed in engine.js
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+
 Player.prototype.handleInput = function(keyPress) {
     let _this = this;
 
-    if (keyPress === 'up' && this.y > -10) {
-    this.y -= 82;
+// Once player reach any of water tile - reset it's position to starting point 
+// (200 on x-axis, 400 on y-axis)
+    if (this.y < 0) {
+            if (keyPress === 'up' && this.y > -10) {
+        this.y -= 82;
     }
     if (keyPress === 'down' && this.y < 400) {
-    this.y += 82;
+        this.y += 82;
     }
     if (keyPress === 'left' && this.x > 0) {
-    this.x -= 100;
+        this.x -= 100;
     }
     if (keyPress === 'right' && this.x < 400) {
-    this.x += 100;
+        this.x += 100;
     }
-    if (this.y < 0) {
-    setTimeout(function() {
-        alert('Great job, You won! :)')
-        _this.x = 200;
-        _this.y = 400;
+
+        setTimeout(function() {
+            alert('Great job, You won! :)');
+            _this.x = 200;
+            _this.y = 400;
         }, 30);
     }
 };
@@ -94,6 +100,7 @@ let allEnemies = [];
 }());
 
 // Place the player object in a variable called player
+// setting the player initial position -(200 on x-axis, 400 on y-axis)
 let player = new Player(200, 400);
 
 // This listens for key presses and sends the keys to your
