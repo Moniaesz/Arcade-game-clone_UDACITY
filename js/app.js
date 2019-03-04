@@ -70,9 +70,10 @@ Player.prototype.render = function() {
 };
 
 // implementing winning condition
-Player.prototype.handleInput = function() {
+Player.prototype.handleInput = function(keyPress) {
     let _this = this;
 
+    this.update(keyPress)
 // Once player reach any of water tile - reset it's position to starting point 
 // (200 on x-axis, 400 on y-axis)
     if (this.y < 0) {
@@ -88,7 +89,7 @@ Player.prototype.handleInput = function() {
 // Place all enemy objects in an array called allEnemies
 let allEnemies = [];
 
-//new instatnces of Enemy pushed to allEnemies array 
+//New instatnces of Enemy pushed to allEnemies array 
 (function enemyStart() {
     allEnemies.push(new Enemy(-75, 60, 50));
     allEnemies.push(new Enemy(-75, 140, 100));
@@ -110,5 +111,6 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
+    console.log(e.keyCode);
 });
 
