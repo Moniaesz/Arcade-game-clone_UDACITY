@@ -5,7 +5,7 @@ Game is based on Object Oriented Programming concepts.
 
 ### HOW TO START
 
-* click here: https://moniaesz.github.io/Arcade-game-clone_UDACITY/
+* click here: https://moniaesz.github.io/arcade-game-clone/
 
 * clone the repository or download zip folder from https://github.com/Moniaesz/Arcade-game-clone_UDACITY
 
